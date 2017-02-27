@@ -1,0 +1,71 @@
+﻿/*------------------------------ TOP MENU -----------------------*/
+
+.top-menu {
+    top: 0px; 
+    width: 100%; 
+    background-color: #000;
+}
+
+.top-menu a {
+    text-decoration: none;
+    background-color: #000;
+}
+
+.top-menu ul li:hover {
+    /*text-decoration: none;*/
+    background-color: #000;
+}
+
+.app-bar .app-bar-menu > li:hover,
+.app-bar .app-bar-menu > li > a:hover,
+.app-bar .app-bar-menu > li:active,
+.app-bar .app-bar-menu > li > a:active {
+  background-color: #000;
+    color: orange;
+}
+
+/*------------------------------ FIN TOP MENU -----------------------*/
+
+/*------------------------------ FOOTER -----------------------*/
+
+.footer-info {
+    background-color: #333333;
+    color: #ababab;
+    position: relative;
+}
+
+.footer-info-text-header {
+    font-size: 24px;
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.footer-info-text-item {
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.footer-band {
+    height: 50px;
+    background-color: black;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    color: #ababab;
+    margin-left: -15px;
+}
+
+.email-input {
+    margin-left: 10px; 
+    margin-right: 10px; 
+    background-color: #111; 
+    border-color: #fff; 
+    border-width: 1px;
+    border-style: solid;
+    width: 50%; 
+    padding-left: 10px; 
+    color: #2086bf;
+}
+
+/*------------------------------ FIN FOOTER -----------------------*/

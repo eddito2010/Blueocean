@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "~/Views/Shared/_Security.cshtml";
+}
+
+@using BlueoceanMVC.Models
+@model LoginViewModel
+
+
+<div class="login-form padding20">
+
+    @using (@Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {role = "form", id = "login-form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h1 class="text-light"><img src="../../Images/Logos/logo_blue_ocean_50.png" style="padding-right: 20px" />Iniciar Sesión</h1>
+        <hr class=""/>
+        <br/>
+        <div class="input-control text full-size" data-role="input">
+            @Html.LabelFor(m => m.Email)
+            <span class="mif-user prepend-icon"></span>            
+            @Html.TextBoxFor(m => m.Email, new {style = "padding-right: 5px", type = "text"})
+            <button class="button helper-button clear"><span class="mif-cross"></span></button>
+        </div>
+        <br/>
+        <br/>
+        <div class="input-control password full-size" data-role="input">
+            @Html.LabelFor(m => m.Password)
+            <span class="mif-lock prepend-icon"></span>
+            @Html.TextBoxFor(m => m.Password, new { style = "padding-right: 5px", type = "text" })
+            <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="form-actions">
+            <button type="submit" class="button primary">Ingresar</button>
+            <button type="button" class="button link" onclick="javascript:history.go(-1);">Cancelar</button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+  

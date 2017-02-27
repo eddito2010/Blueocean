@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Blueocean";
+}
+
+    <div class="" style="position: relative; top: -50px;">
+        <div class="baner">
+            <img src="../../Images/Home/baner_1.jpg" width="100%">
+        </div>
+
+        <div class="logo col-lg-2 col-md-2 col-sm-2 col-xs-2">
+            <img src="../../Images/Logos/logo_blue_ocean_300.png" width="200" />
+        </div>
+
+        <div class="header col-lg-10 col-md-10 col-sm-10 col-xs-10">
+            @Html.ActionLink("Iniciar Sesión", "Login", "Account", null, new { @class = "menu-registro" }) / @Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "menu-registro" })
+        </div>
+
+        <div class="navbar menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="menu pull-left">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="background-color: #000; color: #fff;">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse pull-right" style="vertical-align: middle">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/Home/Store"><span style="color: #fff;">Tienda</span></a></li>
+                        <li><a href="#"><span style="color: #fff;">Servicios</span></a></li>
+                        <li><a href="#"><span style="color: #fff;">Quienes Somos</span></a></li>
+                        <li><a href="#"><span style="color: #fff;">Contáctanos</span></a></li>
+                        <li><a href="#"><img src="../../Images/Home/facebook.png" height="20" class="responsive"></a></li>
+                        <li><a href="#"><img src="../../Images/Home/instagram.png" height="20" class="responsive"></a></li>
+                    </ul>
+                    @*@Html.Partial("_LoginPartial")*@
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row separador" style="top: -50px;">
+    </div>
+
+    <div class="row imagen_redes" style="top: -50px;">
+        <img src="../../Images/Home/chat_800.jpg" style="width: 50%; float: left; left: 0;" class="img-responsive" />
+        <img src="../../Images/Home/whatsapp_800.jpg" style="width: 50%; float: right; right: 0;" class="img-responsive" />
+    </div>
+
+
+<div class="row footer-info">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <span class="footer-info-text-header">Conócenos</span><br>
+        <span class="footer-info-text-item">Quienes Somos</span><br>
+        <span class="footer-info-text-item">Nuestros Servicios</span><br>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <span class="footer-info-text-header">Información</span><br>
+        <span class="footer-info-text-item">Preguntas Frecuentes</span><br>
+        <span class="footer-info-text-item"><a href="#" target="_blank" style="color: #fff;">Términos y Condiciones</a></span><br>
+        <span class="footer-info-text-item">Noticias</span><br>
+        <span class="footer-info-text-item">Rebajas y Promociones</span><br>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <span class="footer-info-text-header">Contáctanos</span><br>
+        <span class="footer-info-text-item"><i class="fa fa-map-marker"></i>&nbsp;Dirección:&nbsp;</span><span style="font-style: italic; font-size: 11px;"><strong>Av. Amazonas N22-29 y Gerónimo Carrión</strong></span><br>
+        <span class="footer-info-text-item"><i class="fa fa-phone"></i>&nbsp;Teléfono:&nbsp;</span><span style="font-style: italic; font-size: 11px;"><strong>600-9317</strong></span><br>
+        <a href="mailto:acliente@blueccenter.com" style="color: #fff;"><span class="footer-info-text-item"><i class="fa fa-envelope"></i>&nbsp;Correo Electrónico:&nbsp;</span><span style="font-style: italic; font-size: 11px;"><strong>acliente@blueccenter.com</strong></span></a><br>
+        <a href="#" style="color: #fff;"><span class="footer-info-text-item"><i class="fa fa-paper-plane"></i>&nbsp;Envíanos un Mensaje</span></a><br><br>
+        <br><span>&nbsp;</span>
+    </div>
+</div>
+
+<!-- BANDA FOOTER -->
+
+<div class="banda_footer">
+    <span style="padding-left: 50px; padding-right: 50px;"><img src="../../Images/Home/facebook.png" height="40" /><span style="color: #fff; padding-left: 10px;">blueocean</span></span>
+    <span style="padding-left: 50px; padding-right: 50px;"><img src="../../Images/Home/instagram.png" height="40" /><span style="color: #fff; padding-left: 10px;">@@blueocean</span></span>
+    <span style="padding-left: 50px; padding-right: 50px;"><img src="../../Images/Home/whatsapp.png" height="40" /><span style="color: #fff; padding-left: 10px;">0987654321</span></span>
+</div>
+
+
+<div class="footer-band">
+    <div class="">
+        <span>Copyright &copy; Blueocean 2016. Todos los Derechos Reservados</span>
+    </div>
+</div>

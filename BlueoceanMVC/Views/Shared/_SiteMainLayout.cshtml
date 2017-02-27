@@ -1,0 +1,425 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.PrimaryColor = "#000";
+    ViewBag.SecundaryColor = "#feed01";
+    ViewBag.MenuLetersColor = "#feed01";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/metro") 
+    @Styles.Render("~/Content/Products/products.css")
+    @Styles.Render("~/Content/common.css")
+
+    <!-- Estos estilos están aquí para poder hacerlos dinámicos pues son los encargados de definir la configuración personalizada
+        de cada cliente -->
+    <style>
+        /*----------------------- MENU LATERAL (acordion) -----------------------*/
+
+            .accordion > .frame > .heading {
+                display: block;
+                padding: 8px 16px 8px 20px;
+                background-color: @ViewBag.PrimaryColor;
+                cursor: pointer;
+                font-size: .6875rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                position: relative;
+                border: 1px @ViewBag.PrimaryColor solid;
+                overflow: hidden;
+                z-index: 2;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                transition: all 0.3s ease;
+                color: @ViewBag.MenuLetersColor;
+            }
+
+            .accordion > .frame > .heading:before {
+                position: absolute;
+                display: block;
+                left: 4px;
+                top: 6px;
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-top: 6px solid transparent;
+                border-bottom: 6px solid black;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                transition: all 0.3s ease;
+            }
+
+            .accordion > .frame > .heading:hover {
+                background-color: @ViewBag.PrimaryColor;
+            }
+
+            .accordion > .frame > .heading .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+                font-size: 3rem;
+                width: 3rem;
+                max-height: 3rem;
+                opacity: .6;
+                color: @ViewBag.MenuLetersColor;
+            }
+
+        .accordion > .frame.active > .heading {
+            background-color: @ViewBag.PrimaryColor;
+            border-color: @ViewBag.PrimaryColor;
+            color: @ViewBag.MenuLetersColor;
+            box-shadow: -1px 6px 6px -6px rgba(0, 0, 0, 0.35);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+            .accordion > .frame.active > .heading .icon {
+                color: @ViewBag.MenuLetersColor;
+            }
+
+            .accordion > .frame.active > .heading:before {
+                left: 8px;
+                border-bottom-color: @ViewBag.SecundaryColor;
+                transition: all 0.3s ease;
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+                -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+            }
+
+        .accordion > .frame.active > .content {
+            display: block;
+        }
+
+        .accordion > .frame > .content {
+            padding: .625rem;
+            display: none;
+            background-color: #ffffff;
+            z-index: 1;
+        }
+
+        .accordion > .frame.disabled > .heading {
+            cursor: default;
+            background: @ViewBag.SecundaryColor linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+            background-size: 40px 40px;
+        }
+
+        /*----------------------- FIN MENU LATERAL -----------------------*/
+
+        /*------------------------ MENU 2 --------------------------------*/
+
+        .m-menu {
+            border-collapse: separate;
+            text-align: left;
+            display: block;
+            height: auto ;
+            position: relative;
+            background-color: #ffffff;
+            color: #1d1d1d;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+            list-style: none inside none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .m-menu:before,
+        .m-menu:after {
+            display: table;
+            content: "";
+        }
+
+        .m-menu:after {
+            clear: both;
+        }
+    
+        .m-menu > li,
+        .m-menu .m-menu-item {
+            display: block;
+            float: left;
+            background-color: #ffffff;
+        }
+
+        .m-menu > li:hover,
+        .m-menu .m-menu-item:hover {
+            background-color: @ViewBag.PrimaryColor;
+        }
+        .m-menu > li:hover > a,
+        .m-menu .m-menu-item:hover > a {
+            color: @ViewBag.SecundaryColor;
+        }
+
+        .m-menu > li.no-hovered,
+        .m-menu .m-menu-item.no-hovered {
+            background-color: inherit;
+            color: inherit;
+        }
+
+        .m-menu > li:first-child,
+        .m-menu .m-menu-item:first-child {
+            margin-left: 0;
+        }
+
+        .m-menu > li > a,
+        .m-menu .m-menu-item > a {
+            display: block;
+            float: left;
+            position: relative;
+            font-weight: normal;
+            color: inherit;
+            font-size: .875rem;
+            outline: none;
+            text-decoration: none;
+            padding: 1rem 1.625rem;
+            border: none;
+        }
+
+        .m-menu > li > a:hover,
+        .m-menu .m-menu-item > a:hover {
+            background-color: inherit;
+        }
+        
+        .m-menu > li > a.dropdown-toggle,
+        .m-menu .m-menu-item > a.dropdown-toggle {
+            padding: 1rem 1.625rem 1rem 1.125rem;
+        }
+        
+        .m-menu > li.active-container,
+        .m-menu .m-menu-item.active-container {
+            background-color: @ViewBag.PrimaryColor;
+        }
+        
+        .m-menu > li.active-container a,
+        .m-menu .m-menu-item.active-container a {
+            color: @ViewBag.MenuLetersColor;
+        }
+        
+        .m-menu > li.active-container a.dropdown-toggle:before,
+        .m-menu .m-menu-item.active-container a.dropdown-toggle:before {
+            border-color: @ViewBag.MenuLetersColor;
+        }
+        
+        .m-menu > li .d-menu,
+        .m-menu .m-menu-item .d-menu {
+            left: 0;
+            top: 100%;
+        }
+
+        .m-menu .m-menu-container {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            padding: .3125rem;
+            font-size: .75rem;
+            z-index: 1000;
+            background-color: inherit;
+        }
+
+        .m-menu .m-menu-container li,
+        .m-menu .m-menu-container a {
+            color: @ViewBag.MenuLetersColor;
+        }
+
+        .m-menu .m-menu-container a {
+            text-decoration: underline;
+        }
+    
+        .m-menu .m-menu-container li:hover > a,
+        .m-menu .m-menu-container li.active > a {
+            text-decoration: none;
+        }
+
+        .m-menu .m-menu-container {
+            display: none;
+        }
+        
+        .m-menu .m-menu-container.open {
+            display: block;
+        }
+
+        .m-menu > li .dropdown-toggle:before {
+            transition: all 0.3s ease;
+        }
+        
+        .m-menu > li .dropdown-toggle.active-toggle:before {
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+            transition: all 0.3s ease;
+        }
+
+        /*------------------------ FIN MENU 2 --------------------------------*/
+    </style>
+
+
+</head>
+<body>
+    <div class="">
+        <header class="app-bar top-menu" data-role="appbar">
+            <div class="container">
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = " place-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <ul class="app-bar-menu small-dropdown">
+                            <li>
+                                @Html.ActionLink("Hola " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Administrar" })
+                            </li>
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
+                        </ul>
+                    }
+                    <ul class="app-bar-menu place-right">
+                        <li><a href="#"><span class="mif-opencart mif-2x"></span></a></li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="app-bar-menu small-dropdown">
+                        <li>@Html.ActionLink("Iniciar sesión", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                        <li>@Html.ActionLink("Registrarse", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    </ul>
+                }
+            </div>
+        </header>
+
+
+        <!-- MENU -->
+        <div class="container">
+            <ul class="m-menu" style="margin-left: -15px; margin-right: -15px">
+                <li class="place-left no-hovered" style="margin: 5px;">
+                    <img src="../../Images/Logos/safetti/logo_safetti.png" width="180" class="responsive"/>
+                </li>
+                <li class="place-right">
+                    <a href="#" class="dropdown-toggle">Devices</a>
+                    <div class="m-menu-container" data-role="dropdown">
+                        <ul class="inline-list">
+                            <li><a href="#">Surface</a></li>
+                            <li><a href="#">Xbox</a></li>
+                            <li><a href="#">PC & Tables</a></li>
+                            <li><a href="#">Phones</a></li>
+                            <li><a href="#">Accessories</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="place-right"><a href="#">Support</a></li>
+                <li class="place-right"><a href="#">Store</a></li>
+            </ul>
+        </div>
+
+        <div class="container page">
+            <!-- CAROUSEL -->
+            <div class="hidden-xs hidden-sm" style="margin-left: -15px; margin-right: -15px">
+                <div class="carousel" data-role="carousel" data-height="400" data-controls="false" data-markers="false" data-effect="fade" style="width: 100%; height: 400px;">
+                    <div class="slide" style="display: none; left: 0px;">
+                        <div class="image-container image-format-fill img-responsive" style="width: 100%; height: 100%;">
+                            <div class="frame">
+                                <div style="width: 100%; height: 100%; background-image: url(../../Images/Baner/Safetti/baner_1.jpg); background-size: cover; background-repeat: no-repeat; border-radius: 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" style="display: block; left: 0px;">
+                        <div class="image-container image-format-fill img-responsive" style="width: 100%; height: 100%;">
+                            <div class="frame">
+                                <div style="width: 100%; height: 100%; background-image: url(../../Images/Baner/Safetti/baner_2.jpg); background-size: cover; background-repeat: no-repeat; border-radius: 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" style="display: none; left: 0px;">
+                        <div class="image-container image-format-fill img-responsive" style="width: 100%; height: 100%;">
+                            <div class="frame">
+                                <div style="width: 100%; height: 100%; background-image: url(../../Images/Baner/Safetti/baner_3.jpg); background-size: cover; background-repeat: no-repeat; border-radius: 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide" style="display: none; left: 0px;">
+                        <div class="image-container image-format-fill img-responsive" style="width: 100%; height: 100%;">
+                            <div class="frame">
+                                <div style="width: 100%; height: 100%; background-image: url(../../Images/Baner/Safetti/baner_4.jpg); background-size: cover; background-repeat: no-repeat; border-radius: 0px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN CAROUSEL -->
+            @RenderBody()
+        </div>
+
+        <!-- FOOTER -->
+        <div class="container footer-info">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <span class="footer-info-text-header">Conócenos</span><br>
+                <span class="footer-info-text-item">Quienes Somos</span><br>
+                <span class="footer-info-text-item">Nuestros Servicios</span><br>
+                <br><br>
+                <span>Operamos con</span><br>
+                <span><img src="../../Images/Common/payclub.png" width="150" />&nbsp;<img src="../../Images/Common/cash.png" width="40" /></span>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <span class="footer-info-text-header">Información</span><br>
+                <span class="footer-info-text-item">Preguntas Frecuentes</span><br>
+                <span class="footer-info-text-item"><a href="#" target="_blank" style="color: #ababab;">Términos y Condiciones</a></span><br>
+                <span class="footer-info-text-item">Noticias</span><br>
+                <span class="footer-info-text-item">Rebajas y Promociones</span><br>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <span class="footer-info-text-header">Contáctanos</span><br>
+                <a href="#" style="color: #ababab;"><span class="footer-info-text-item"><i class="fa fa-map-marker"></i>&nbsp;Dirección:&nbsp;</span><span style="font-style: italic; font-size: 11px;"><strong>Av. Amazonas N22-29 y Gerónimo Carrión</strong></span></a><br>
+                <span class="footer-info-text-item"><i class="fa fa-phone"></i>&nbsp;Teléfono:&nbsp;</span><span style="font-style: italic; font-size: 11px;"><strong>600-9317</strong></span><br>
+                <a href="mailto:acliente@blueccenter.com" style="color: #ababab;"><span class="footer-info-text-item"><i class="fa fa-envelope"></i>&nbsp;Correo Electrónico:&nbsp;</span><span style="font-style: italic; font-size: 11px;"><strong>acliente@blueccenter.com</strong></span></a><br>
+                <a href="#" style="color: #ababab;"><span class="footer-info-text-item"><i class="fa fa-paper-plane"></i>&nbsp;Envíanos un Mensaje</span></a><br><br>
+                <span><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></span>
+                <span><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-instagram fa-stack-1x fa-inverse"></i></span></span>
+                <!--                    <span><span class="fa-stack fa-lg"><img src="<?php echo $home; ?>assets/img/logos/logo_blue_ocean_30x30.png"></span></span>-->
+                <a href="/" target="_blank"><span><span class="fa-stack fa-lg"><img src="../../Images/Logos/logo_blue_ocean_35.png"></span></span></a>
+                <br><span>&nbsp;</span>
+            </div>
+        </div>
+        <div class="container footer-info" style="text-align: center;">
+            <div class="">
+                <br>
+                <form data-role="validator" class="form-horizontal">
+                    <label class="">Recibir información por correo</label>
+                    <div class="input-control text">
+                        <input data-validate-func="email"
+                               data-validate-hint="Tiene que especificar una dirección de correo válida"
+                               data-validate-hint-position="top"
+                               type="text"
+                               placeholder="correo electrónico"
+                               class="small email-input">
+                        <span class="input-state-error mif-warning"></span>
+                        <span class="input-state-success mif-checkmark"></span>
+                    </div>
+                    <button class="button primary">Inscríbete</button>
+                </form>
+                <br/><br/>
+            </div>
+        </div>
+        <div class="footer-band">
+            <div class="">
+                <span>Copyright &copy; Blueocean 2016. Todos los Derechos Reservados</span>
+            </div>
+        </div>
+
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTYtFBJWjuaxjWZ4n7bkdK8d3f22brL2s&callback=initMap">
+        </script>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/metro.js")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

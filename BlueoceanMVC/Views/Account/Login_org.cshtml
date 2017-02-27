@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Views/Shared/_Security.cshtml";
+}
+@using BlueoceanMVC.Models
+@model LoginViewModel
+
+
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "cbp-mc-form", role = "form" }))
+            {
+                <br/>
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="cbp-mc-column">
+                </div>
+                <div class="cbp-mc-column_login">
+                    <img src="../../Images/Logos/logo_blue_ocean_100.png"/>
+                        @Html.LabelFor(m => m.Email, new {@class = ""})
+
+                            @Html.TextBoxFor(m => m.Email)
+                            @Html.ValidationMessageFor(m => m.Email, "", new {@class = "text-danger"})
+                        @Html.LabelFor(m => m.Password, new {@class = ""})
+                            @Html.PasswordFor(m => m.Password, new {@class = ""})
+                            @Html.ValidationMessageFor(m => m.Password, "", new {@class = "text-danger"})
+                    @*<div class="form-group">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>*@
+                    <br/><br/>
+                    @*<input class="cbp-mc-submit3" type="button" id="volver_atras" value="Volver Atrás" />*@
+                    <input type="submit" value="Entrar" class="cbp-mc-submit"/>
+                    @*<input class="cbp-mc-submit2" type="button" id="register" name="register" value="No Tengo Cuenta" />*@
+                </div>
+                <div class="cbp-mc-column">
+                    <p>
+                        @Html.ActionLink("No tengo cuenta", "Register", null, new { @style = "color: #000"})
+                    </p>
+                    <p>
+                        @Html.ActionLink("Olvidé mi contraseña", "ForgotPassword", null, new { @style = "color: #000" })
+                    </p>
+                </div>
+
+
+            }
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,183 @@
+﻿@{
+    Layout = "~/Views/Shared/_Security.cshtml";
+}
+
+@using BlueoceanMVC.Models
+@model RegisterViewModel
+
+
+<div class="register-form padding20">
+
+    @using (@Html.BeginForm("Register", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {role = "form", id = "register-form", style = "display: table"}))
+    {
+        @Html.AntiForgeryToken()
+        <h1 class="text-light"><img src="../../Images/Logos/logo_blue_ocean_50.png" style="padding-right: 20px"/>Registro de Usuario</h1>
+        <hr class=""/>
+        <br/>
+        <div class="grid">
+            <div class="row cells3">
+                <div class="cell">
+                    <div class="input-control text full-size" data-role="input">
+                        @Html.LabelFor(m => m.Names)
+                        @Html.TextBoxFor(m => m.Names, new {style = "padding-right: 5px", type = "text"})
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.StateId)
+                        @*@Html.TextBoxFor(m => m.StateId, new {style = "padding-right: 5px", type = "text"})*@
+                        @Html.DropDownListFor(m => m.StateId, new SelectList(Model.States, "Id", "Name"), new { id="statesList"})
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.TlfConv)
+                        <span class="mif-phone prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.TlfConv, new { style = "padding-right: 5px", type = "text" })
+                        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row cells3">
+                <div class="cell">
+                    <div class="input-control text full-size" data-role="input">
+                        @Html.LabelFor(m => m.LastNames)
+                        @Html.TextBoxFor(m => m.LastNames, new { style = "padding-right: 5px", type = "text" })
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.CityId)
+                        @*@Html.TextBoxFor(m => m.CityId, new { style = "padding-right: 5px", type = "text" })*@
+                        @Html.DropDownListFor(m => m.CityId, new SelectList("", "Id", "Name"), new { id = "citiesList" })
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.TlfCel)
+                        <span class="mif-mobile prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.TlfCel, new { style = "padding-right: 5px", type = "text" })
+                        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="row cells3">
+                <div class="cell">
+                    <div class="input-control text full-size" data-role="input">
+                        @Html.LabelFor(m => m.Ci)
+                        @Html.TextBoxFor(m => m.Ci, new { style = "padding-right: 5px", type = "text" })
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.MainStreet)
+                        <span class="mif-location prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.MainStreet, new { style = "padding-right: 5px", type = "text" })
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control select full-size">
+                        @Html.LabelFor(m => m.Sex)
+                        <select>
+                            <option></option>
+                            <option>M</option>
+                            <option>F</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row cells3">
+                <div class="cell">
+                    <div class="input-control text full-size" data-role="input">
+                        @Html.LabelFor(m => m.Email)
+                        <span class="mif-mail prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.Email, new {style = "padding-right: 5px", type = "text"})
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.SecondStreet)
+                        <span class="mif-compass2 prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.SecondStreet, new {style = "padding-right: 5px", type = "text"})
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.BirthDate)
+                        <span class="mif-gift prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.BirthDate, new {style = "padding-right: 5px", type = "text"})
+                    </div>
+                </div>
+            </div>
+            <div class="row cells3">
+                <div class="cell">
+                    <div class="input-control text full-size" data-role="input">
+                        @Html.LabelFor(m => m.Password)
+                        <span class="mif-lock prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.Password, new {style = "padding-right: 5px", type = "text"})
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.Apartment)
+                        <span class="mif-my-location prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.Apartment, new {style = "padding-right: 5px", type = "text"})
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control select full-size">
+                        @Html.LabelFor(m => m.ReceiveEmail)
+                        <select>
+                            <option selected>Si</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row cells3">
+                <div class="cell">
+                    <div class="input-control text full-size" data-role="input">
+                        @Html.LabelFor(m => m.ConfirmPassword)
+                        <span class="mif-lock prepend-icon"></span>
+                        @Html.TextBoxFor(m => m.ConfirmPassword, new { style = "padding-right: 5px", type = "text" })
+                    </div>
+                </div>
+                <div class="cell">
+                    <div class="input-control password full-size" data-role="input">
+                        @Html.LabelFor(m => m.Reference)
+                        @Html.TextAreaFor(m => m.Reference, new { style = "padding-right: 5px", type = "text" })
+                    </div>
+                </div>
+                <div class="cell">
+                    <span style="font-weight: bold; font-style: italic">Efectuando el registro el usuario declara y reconoce, que revisó los <a href="#" target="_blank">términos y condiciones</a> bajo el sistema y servicio denominado BLUE OCEAN, el mismo que es de propiedad de BREDATEC.</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-actions place-right">
+            <button type="submit" class="button primary">Registrar</button>
+            <button type="button" class="button link" onclick="javascript:history.go(-1);">Cancelar</button>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script src="../../Scripts/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#statesList').on('change', function() {
+            console.log('Selected State: ' + $('#statesList').val());
+            $.ajax({
+                url: '@Url.Action("GetCitiesFromStates", "PhysicLocation")?stateId=' + $('#statesList').val(),
+                type: 'post',
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+            });
+            console.log();
+        });
+    });
+</script>

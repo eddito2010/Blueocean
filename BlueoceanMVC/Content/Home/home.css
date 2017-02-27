@@ -1,0 +1,183 @@
+@font-face {
+	font-family: 'Neon';
+	src:url('../../fonts/neon/Neon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body {
+    font-family: 'Neon';
+    height: 1450px;
+}
+
+.page {
+    /*margin-bottom: 50px;*/
+    /*    width: 100%;*/
+/*    background-color: #fff; #e5e3e3;*/
+/*    max-width: 1370px;*/
+
+/*    -webkit-box-shadow: 0px 3px 3px rgba(150,150,150,0.8);
+    -moz-box-shadow: 0px 3px 3px rgba(150,150,150,0.8);
+    box-shadow: 0px 3px 3px rgba(150,150,150,0.8);    */
+}
+
+
+/* ---------------------------- HEADER ---------------------------- */
+.header {
+    position: absolute;
+    top: 30px;
+    background-color: transparent;
+    width: 100%;
+    float: right;
+    right: 20px;
+    text-align: right;
+}
+
+/* ---------------------------- FIN HEADER ---------------------------- */
+
+/* ---------------------------- MENU ---------------------------- */
+
+.menu {
+    position: absolute;
+    top: 40px;
+    background-color: transparent; 
+    opacity: 1;
+    color: #fff;
+    font-size: 20px;
+    float: right;
+    right: 0px;
+    width: 100%;
+}
+
+.menu-registro {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.menu-registro a {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.menu-registro:hover {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+.logo {
+    float: left;
+    left: 20px;
+    top: 10px;
+    position: absolute;
+}
+
+.navbar-nav li a:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.navbar-nav li.active a {
+    background-color: transparent;
+    color: #fff;
+}
+
+
+
+/* ---------------------------- FIN MENU ---------------------------- */
+
+/* ---------------------------- SLIDE ---------------------------- */
+
+.slide1 {
+/*    height: 287px;
+/*    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: black;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-left-color: black;
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: black;*/
+    top: 0px;
+    margin-left: -15px;
+    width: 100%;
+    /*width: 102.7%;*/
+}
+
+/* ---------------------------- FIN SLIDE ---------------------------- */
+
+/* ---------------------------- SEPARADOR ---------------------------- */
+
+.separador {
+    background-color: #002e82;
+    height: 50px;
+    position: relative;
+}
+
+/*------------------------------ FIN SEPARADOR -----------------------*/
+
+/* ---------------------------- IMAGEN REDES ---------------------------- */
+
+.imagen_redes {
+    position: relative;
+    height: auto;
+    background-color: #fff;
+}
+
+/*------------------------------ FIN SEPARADOR -----------------------*/
+
+/*------------------------------ FOOTER -----------------------*/
+
+.footer-info {
+    background-color: #002e82;
+    color: #fff;
+    position: relative;
+    top: -50px;
+    text-align: left;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.footer-info-text-header {
+    font-size: 24px;
+    line-height: 80px;
+    vertical-align: middle;
+}
+
+.footer-info-text-item {
+    font-size: 15px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+.footer-band {
+    background-color: #002e82;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    top: -50px;
+}
+
+/*------------------------------ FIN FOOTER -----------------------*/
+
+/* ---------------------------- BANDA FOOTER ---------------------------- */
+
+.banda_footer {
+    background-color: #001741;
+    top: -50px;
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+/*------------------------------ FIN BANDA FOOTER -----------------------*/

@@ -1,0 +1,1086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="blueoceanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="blueoceanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Billers" EntityType="blueoceanModel.Biller" />
+    <EntitySet Name="Carts" EntityType="blueoceanModel.Cart" />
+    <EntitySet Name="Categories" EntityType="blueoceanModel.Category" />
+    <EntitySet Name="Cities" EntityType="blueoceanModel.City" />
+    <EntitySet Name="Colors" EntityType="blueoceanModel.Color" />
+    <EntitySet Name="Comments" EntityType="blueoceanModel.Comment" />
+    <EntitySet Name="EmailLists" EntityType="blueoceanModel.EmailList" />
+    <EntitySet Name="Favorites" EntityType="blueoceanModel.Favorite" />
+    <EntitySet Name="InvoiceDetails" EntityType="blueoceanModel.InvoiceDetail" />
+    <EntitySet Name="Invoices" EntityType="blueoceanModel.Invoice" />
+    <EntitySet Name="Laars" EntityType="blueoceanModel.Laar" />
+    <EntitySet Name="Marks" EntityType="blueoceanModel.Mark" />
+    <EntitySet Name="Messages" EntityType="blueoceanModel.Message" />
+    <EntitySet Name="OfficesCouriers" EntityType="blueoceanModel.OfficesCourier" />
+    <EntitySet Name="PaymentPayclubs" EntityType="blueoceanModel.PaymentPayclub" />
+    <EntitySet Name="Products" EntityType="blueoceanModel.Product" />
+    <EntitySet Name="ProductsDetails" EntityType="blueoceanModel.ProductsDetail" />
+    <EntitySet Name="ProductsImages" EntityType="blueoceanModel.ProductsImage" />
+    <EntitySet Name="Providers" EntityType="blueoceanModel.Provider" />
+    <EntitySet Name="PurchaseOrders" EntityType="blueoceanModel.PurchaseOrder" />
+    <EntitySet Name="PurchaseTrackings" EntityType="blueoceanModel.PurchaseTracking" />
+    <EntitySet Name="PurchaseTrackingDetails" EntityType="blueoceanModel.PurchaseTrackingDetail" />
+    <EntitySet Name="Roles" EntityType="blueoceanModel.Role" />
+    <EntitySet Name="Scores" EntityType="blueoceanModel.Score" />
+    <EntitySet Name="Shippings" EntityType="blueoceanModel.Shipping" />
+    <EntitySet Name="Sizes" EntityType="blueoceanModel.Size" />
+    <EntitySet Name="States" EntityType="blueoceanModel.State" />
+    <EntitySet Name="SubCategories" EntityType="blueoceanModel.SubCategory" />
+    <EntitySet Name="sysdiagrams" EntityType="blueoceanModel.sysdiagram" />
+    <EntitySet Name="Tramacoes" EntityType="blueoceanModel.Tramaco" />
+    <EntitySet Name="UserClaims" EntityType="blueoceanModel.UserClaim" />
+    <EntitySet Name="UserLogins" EntityType="blueoceanModel.UserLogin" />
+    <EntitySet Name="UserRoles" EntityType="blueoceanModel.UserRole" />
+    <EntitySet Name="Users" EntityType="blueoceanModel.User" />
+    <AssociationSet Name="FK_Billers_Cities" Association="blueoceanModel.FK_Billers_Cities">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Biller" EntitySet="Billers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Billers_States" Association="blueoceanModel.FK_Billers_States">
+      <End Role="State" EntitySet="States" />
+      <End Role="Biller" EntitySet="Billers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Billers" Association="blueoceanModel.FK_Products_Billers">
+      <End Role="Biller" EntitySet="Billers" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Products" Association="blueoceanModel.FK_Cart_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Users" Association="blueoceanModel.FK_Cart_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrders_Cart" Association="blueoceanModel.FK_PurchaseOrders_Cart">
+      <End Role="Cart" EntitySet="Carts" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Categories" Association="blueoceanModel.FK_Products_Categories">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubCategories_Categories" Association="blueoceanModel.FK_SubCategories_Categories">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="SubCategory" EntitySet="SubCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_States" Association="blueoceanModel.FK_Cities_States">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Providers_Cities" Association="blueoceanModel.FK_Providers_Cities">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Provider" EntitySet="Providers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Cities" Association="blueoceanModel.FK_Users_Cities">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Colors_Products" Association="blueoceanModel.FK_Colors_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Color" EntitySet="Colors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Products" Association="blueoceanModel.FK_Comments_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Users" Association="blueoceanModel.FK_Comments_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Favorites_Products" Association="blueoceanModel.FK_Favorites_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Favorite" EntitySet="Favorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InvoiceDetails_Invoices" Association="blueoceanModel.FK_InvoiceDetails_Invoices">
+      <End Role="Invoice" EntitySet="Invoices" />
+      <End Role="InvoiceDetail" EntitySet="InvoiceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoices_Users" Association="blueoceanModel.FK_Invoices_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Invoice" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Marks" Association="blueoceanModel.FK_Products_Marks">
+      <End Role="Mark" EntitySet="Marks" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Providers" Association="blueoceanModel.FK_Products_Providers">
+      <End Role="Provider" EntitySet="Providers" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Products_Users" Association="blueoceanModel.FK_Products_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsDetails_Products" Association="blueoceanModel.FK_ProductsDetails_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductsDetail" EntitySet="ProductsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductsImages_Products" Association="blueoceanModel.FK_ProductsImages_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductsImage" EntitySet="ProductsImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scores_Products" Association="blueoceanModel.FK_Scores_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Score" EntitySet="Scores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sizes_Products" Association="blueoceanModel.FK_Sizes_Products">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Size" EntitySet="Sizes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Providers_States" Association="blueoceanModel.FK_Providers_States">
+      <End Role="State" EntitySet="States" />
+      <End Role="Provider" EntitySet="Providers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseOrders_Users" Association="blueoceanModel.FK_PurchaseOrders_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="PurchaseOrder" EntitySet="PurchaseOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserRoles_dbo_Roles_RoleId" Association="blueoceanModel.FK_dbo_UserRoles_dbo_Roles_RoleId">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Scores_Users" Association="blueoceanModel.FK_Scores_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Score" EntitySet="Scores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Shippings_Users" Association="blueoceanModel.FK_Shippings_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Shipping" EntitySet="Shippings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_States" Association="blueoceanModel.FK_Users_States">
+      <End Role="State" EntitySet="States" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserClaims_dbo_Users_IdentityUser_Id" Association="blueoceanModel.FK_dbo_UserClaims_dbo_Users_IdentityUser_Id">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserClaim" EntitySet="UserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserLogins_dbo_Users_IdentityUser_Id" Association="blueoceanModel.FK_dbo_UserLogins_dbo_Users_IdentityUser_Id">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserLogin" EntitySet="UserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_UserRoles_dbo_Users_IdentityUser_Id" Association="blueoceanModel.FK_dbo_UserRoles_dbo_Users_IdentityUser_Id">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EnumType Name="Sex" a:ExternalTypeName="Tools.Enums.Sex" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+  <EnumType Name="Roles" a:ExternalTypeName="Tools.Enums.Roles" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+  <EntityType Name="Biller">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Identification" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TlfConv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TlfCel" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Logo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Establecimiento" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="PtoEmision" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="ObligadoContabilidad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="blueoceanModel.FK_Billers_Cities" FromRole="Biller" ToRole="City" />
+    <NavigationProperty Name="State" Relationship="blueoceanModel.FK_Billers_States" FromRole="Biller" ToRole="State" />
+    <NavigationProperty Name="Products" Relationship="blueoceanModel.FK_Products_Billers" FromRole="Biller" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Facturado" Type="Boolean" />
+    <Property Name="ShopDate" Type="DateTime" Precision="7" />
+    <Property Name="IsPaid" Type="Boolean" />
+    <Property Name="PaymentForm" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="7" />
+    <Property Name="Cant" Type="Int32" Nullable="false" />
+    <Property Name="TotalPrice" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Color" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Size" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_Cart_Products" FromRole="Cart" ToRole="Product" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_Cart_Users" FromRole="Cart" ToRole="User" />
+    <NavigationProperty Name="PurchaseOrders" Relationship="blueoceanModel.FK_PurchaseOrders_Cart" FromRole="Cart" ToRole="PurchaseOrder" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Modulus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Products" Relationship="blueoceanModel.FK_Products_Categories" FromRole="Category" ToRole="Product" />
+    <NavigationProperty Name="SubCategories" Relationship="blueoceanModel.FK_SubCategories_Categories" FromRole="Category" ToRole="SubCategory" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Billers" Relationship="blueoceanModel.FK_Billers_Cities" FromRole="City" ToRole="Biller" />
+    <NavigationProperty Name="State" Relationship="blueoceanModel.FK_Cities_States" FromRole="City" ToRole="State" />
+    <NavigationProperty Name="Providers" Relationship="blueoceanModel.FK_Providers_Cities" FromRole="City" ToRole="Provider" />
+    <NavigationProperty Name="Users" Relationship="blueoceanModel.FK_Users_Cities" FromRole="City" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Color1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ColorCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_Colors_Products" FromRole="Color" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Show" Type="Boolean" />
+    <Property Name="GestorId" Type="Int32" />
+    <Property Name="CommentDate" Type="DateTime" Precision="7" />
+    <Property Name="ModeratedDate" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_Comments_Products" FromRole="Comment" ToRole="Product" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_Comments_Users" FromRole="Comment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="EmailList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Favorite">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_Favorites_Products" FromRole="Favorite" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="InvoiceDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="CartId" Type="Int32" />
+    <NavigationProperty Name="Invoice" Relationship="blueoceanModel.FK_InvoiceDetails_Invoices" FromRole="InvoiceDetail" ToRole="Invoice" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Secuencial" Type="Int32" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="PurchaseCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Sent" Type="Boolean" />
+    <Property Name="PaymentForm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="DateTime" Precision="7" />
+    <NavigationProperty Name="InvoiceDetails" Relationship="blueoceanModel.FK_InvoiceDetails_Invoices" FromRole="Invoice" ToRole="InvoiceDetail" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_Invoices_Users" FromRole="Invoice" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Laar">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Route" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentCost" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FreightCost" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DeliveryTime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Coverage" Type="Boolean" />
+    <Property Name="HasAgency" Type="Boolean" />
+    <Property Name="ExtraKgCost" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentCost_" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="FreightCost_" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ExtraKgCost_" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Mark">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mark1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Modulus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Products" Relationship="blueoceanModel.FK_Products_Marks" FromRole="Mark" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Message">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Message1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsRead" Type="Boolean" />
+    <Property Name="Answered" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="7" />
+    <Property Name="DateRead" Type="DateTime" Precision="7" />
+    <Property Name="AnsweredDate" Type="DateTime" Precision="7" />
+  </EntityType>
+  <EntityType Name="OfficesCourier">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Contact" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Tlf" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="WorkingTime" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CourierName" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PaymentPayclub">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="7" />
+    <Property Name="AuthNumber" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CreditType" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CantMonth" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="CardType" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Subtotal" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Iva" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Ice" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Interes" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Total" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="TransactionId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="InvocationType" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Ref1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Ref2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Ref3" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Ref4" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Ref5" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Price" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProviderId" Type="Int32" />
+    <Property Name="Iva" Type="Decimal" Nullable="false" Precision="11" Scale="0" />
+    <Property Name="Discount" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="SubCategoryId" Type="Int32" />
+    <Property Name="Stock" Type="Int32" Nullable="false" />
+    <Property Name="Score" Type="Int32" Nullable="false" />
+    <Property Name="BillerId" Type="Int32" Nullable="false" />
+    <Property Name="HasColor" Type="Boolean" Nullable="false" />
+    <Property Name="HasSize" Type="Boolean" Nullable="false" />
+    <Property Name="Modulus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MarkId" Type="Int32" />
+    <Property Name="DateAdmission" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="Weight" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="UmWeight" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Dimensions" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Packaging" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="ChargedBy" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Biller" Relationship="blueoceanModel.FK_Products_Billers" FromRole="Product" ToRole="Biller" />
+    <NavigationProperty Name="Carts" Relationship="blueoceanModel.FK_Cart_Products" FromRole="Product" ToRole="Cart" />
+    <NavigationProperty Name="Category" Relationship="blueoceanModel.FK_Products_Categories" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="Colors" Relationship="blueoceanModel.FK_Colors_Products" FromRole="Product" ToRole="Color" />
+    <NavigationProperty Name="Comments" Relationship="blueoceanModel.FK_Comments_Products" FromRole="Product" ToRole="Comment" />
+    <NavigationProperty Name="Favorites" Relationship="blueoceanModel.FK_Favorites_Products" FromRole="Product" ToRole="Favorite" />
+    <NavigationProperty Name="Mark" Relationship="blueoceanModel.FK_Products_Marks" FromRole="Product" ToRole="Mark" />
+    <NavigationProperty Name="Provider" Relationship="blueoceanModel.FK_Products_Providers" FromRole="Product" ToRole="Provider" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_Products_Users" FromRole="Product" ToRole="User" />
+    <NavigationProperty Name="ProductsDetails" Relationship="blueoceanModel.FK_ProductsDetails_Products" FromRole="Product" ToRole="ProductsDetail" />
+    <NavigationProperty Name="ProductsImages" Relationship="blueoceanModel.FK_ProductsImages_Products" FromRole="Product" ToRole="ProductsImage" />
+    <NavigationProperty Name="Scores" Relationship="blueoceanModel.FK_Scores_Products" FromRole="Product" ToRole="Score" />
+    <NavigationProperty Name="Sizes" Relationship="blueoceanModel.FK_Sizes_Products" FromRole="Product" ToRole="Size" />
+  </EntityType>
+  <EntityType Name="ProductsDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Mark" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Specifications" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Benefits" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_ProductsDetails_Products" FromRole="ProductsDetail" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="ProductsImage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Modulus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_ProductsImages_Products" FromRole="ProductsImage" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Provider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Identification" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="TlfConv" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="TlfCel" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Logo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="City" Relationship="blueoceanModel.FK_Providers_Cities" FromRole="Provider" ToRole="City" />
+    <NavigationProperty Name="Products" Relationship="blueoceanModel.FK_Products_Providers" FromRole="Provider" ToRole="Product" />
+    <NavigationProperty Name="State" Relationship="blueoceanModel.FK_Providers_States" FromRole="Provider" ToRole="State" />
+  </EntityType>
+  <EntityType Name="PurchaseOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartId" Type="Int32" />
+    <Property Name="PurchaseCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="7" />
+    <Property Name="IsClosed" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Cart" Relationship="blueoceanModel.FK_PurchaseOrders_Cart" FromRole="PurchaseOrder" ToRole="Cart" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_PurchaseOrders_Users" FromRole="PurchaseOrder" ToRole="User" />
+  </EntityType>
+  <EntityType Name="PurchaseTracking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegisteredDate" Type="DateTime" Precision="7" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PurchaseTrackingDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegisteredDate" Type="DateTime" Precision="7" />
+    <Property Name="Date" Type="DateTime" Precision="7" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="PurchaseCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Position" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserRoles" Relationship="blueoceanModel.FK_dbo_UserRoles_dbo_Roles_RoleId" FromRole="Role" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="Score">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Score1" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_Scores_Products" FromRole="Score" ToRole="Product" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_Scores_Users" FromRole="Score" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Shipping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PurchaseCode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TlfConv" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TlfCel" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MainStreet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SecondStreet" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Apartment" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_Shippings_Users" FromRole="Shipping" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Size1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Stock" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="blueoceanModel.FK_Sizes_Products" FromRole="Size" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Billers" Relationship="blueoceanModel.FK_Billers_States" FromRole="State" ToRole="Biller" />
+    <NavigationProperty Name="Cities" Relationship="blueoceanModel.FK_Cities_States" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Providers" Relationship="blueoceanModel.FK_Providers_States" FromRole="State" ToRole="Provider" />
+    <NavigationProperty Name="Users" Relationship="blueoceanModel.FK_Users_States" FromRole="State" ToRole="User" />
+  </EntityType>
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="SubCategory1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Modulus" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="blueoceanModel.FK_SubCategories_Categories" FromRole="SubCategory" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tramaco">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Route" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="DocumentCosto" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FreightCost" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DeliveryTime" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Coverage" Type="Boolean" />
+    <Property Name="HasAgency" Type="Boolean" />
+    <Property Name="ExtraKgCost" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserClaim">
+    <Key>
+      <PropertyRef Name="UserClaimId" />
+    </Key>
+    <Property Name="UserClaimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IdentityUser_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_dbo_UserClaims_dbo_Users_IdentityUser_Id" FromRole="UserClaim" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IdentityUser_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_dbo_UserLogins_dbo_Users_IdentityUser_Id" FromRole="UserLogin" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IdentityUser_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Role" Relationship="blueoceanModel.FK_dbo_UserRoles_dbo_Roles_RoleId" FromRole="UserRole" ToRole="Role" />
+    <NavigationProperty Name="User" Relationship="blueoceanModel.FK_dbo_UserRoles_dbo_Users_IdentityUser_Id" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Names" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastNames" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ci" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TlfConv" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TlfCel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ReceiveEmail" Type="Boolean" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Sex" Type="Int32" />
+    <Property Name="BirthDate" Type="DateTime" Precision="3" />
+    <Property Name="MainStreet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecondStreet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Apartment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsProvider" Type="Boolean" />
+    <Property Name="ProviderId" Type="Int32" />
+    <NavigationProperty Name="Carts" Relationship="blueoceanModel.FK_Cart_Users" FromRole="User" ToRole="Cart" />
+    <NavigationProperty Name="City" Relationship="blueoceanModel.FK_Users_Cities" FromRole="User" ToRole="City" />
+    <NavigationProperty Name="Comments" Relationship="blueoceanModel.FK_Comments_Users" FromRole="User" ToRole="Comment" />
+    <NavigationProperty Name="Invoices" Relationship="blueoceanModel.FK_Invoices_Users" FromRole="User" ToRole="Invoice" />
+    <NavigationProperty Name="Products" Relationship="blueoceanModel.FK_Products_Users" FromRole="User" ToRole="Product" />
+    <NavigationProperty Name="PurchaseOrders" Relationship="blueoceanModel.FK_PurchaseOrders_Users" FromRole="User" ToRole="PurchaseOrder" />
+    <NavigationProperty Name="Scores" Relationship="blueoceanModel.FK_Scores_Users" FromRole="User" ToRole="Score" />
+    <NavigationProperty Name="Shippings" Relationship="blueoceanModel.FK_Shippings_Users" FromRole="User" ToRole="Shipping" />
+    <NavigationProperty Name="State" Relationship="blueoceanModel.FK_Users_States" FromRole="User" ToRole="State" />
+    <NavigationProperty Name="UserClaims" Relationship="blueoceanModel.FK_dbo_UserClaims_dbo_Users_IdentityUser_Id" FromRole="User" ToRole="UserClaim" />
+    <NavigationProperty Name="UserLogins" Relationship="blueoceanModel.FK_dbo_UserLogins_dbo_Users_IdentityUser_Id" FromRole="User" ToRole="UserLogin" />
+    <NavigationProperty Name="UserRoles" Relationship="blueoceanModel.FK_dbo_UserRoles_dbo_Users_IdentityUser_Id" FromRole="User" ToRole="UserRole" />
+  </EntityType>
+  <Association Name="FK_Billers_Cities">
+    <End Type="blueoceanModel.City" Role="City" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Biller" Role="Biller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Biller">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Billers_States">
+    <End Type="blueoceanModel.State" Role="State" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Biller" Role="Biller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Biller">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Billers">
+    <End Type="blueoceanModel.Biller" Role="Biller" Multiplicity="1" />
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Biller">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="BillerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Users">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="1" />
+    <End Type="blueoceanModel.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrders_Cart">
+    <End Type="blueoceanModel.Cart" Role="Cart" Multiplicity="0..1" />
+    <End Type="blueoceanModel.PurchaseOrder" Role="PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Categories">
+    <End Type="blueoceanModel.Category" Role="Category" Multiplicity="1" />
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubCategories_Categories">
+    <End Type="blueoceanModel.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="blueoceanModel.SubCategory" Role="SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_States">
+    <End Type="blueoceanModel.State" Role="State" Multiplicity="1" />
+    <End Type="blueoceanModel.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Providers_Cities">
+    <End Type="blueoceanModel.City" Role="City" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Provider" Role="Provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Provider">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Cities">
+    <End Type="blueoceanModel.City" Role="City" Multiplicity="0..1" />
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Colors_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.Color" Role="Color" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Color">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Users">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Favorites_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="1" />
+    <End Type="blueoceanModel.Favorite" Role="Favorite" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Favorite">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InvoiceDetails_Invoices">
+    <End Type="blueoceanModel.Invoice" Role="Invoice" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.InvoiceDetail" Role="InvoiceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoice">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InvoiceDetail">
+        <PropertyRef Name="InvoiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoices_Users">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Invoice" Role="Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Marks">
+    <End Type="blueoceanModel.Mark" Role="Mark" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mark">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="MarkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Providers">
+    <End Type="blueoceanModel.Provider" Role="Provider" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Provider">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ProviderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Products_Users">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="ChargedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductsDetails_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.ProductsDetail" Role="ProductsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductsDetail">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductsImages_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.ProductsImage" Role="ProductsImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductsImage">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scores_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Score" Role="Score" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Score">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sizes_Products">
+    <End Type="blueoceanModel.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Size" Role="Size" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Size">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Providers_States">
+    <End Type="blueoceanModel.State" Role="State" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Provider" Role="Provider" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Provider">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseOrders_Users">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.PurchaseOrder" Role="PurchaseOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="PurchaseOrder">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserRoles_dbo_Roles_RoleId">
+    <End Type="blueoceanModel.Role" Role="Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="blueoceanModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Scores_Users">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Score" Role="Score" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Score">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Shippings_Users">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.Shipping" Role="Shipping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Shipping">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_States">
+    <End Type="blueoceanModel.State" Role="State" Multiplicity="0..1" />
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserClaims_dbo_Users_IdentityUser_Id">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.UserClaim" Role="UserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserClaim">
+        <PropertyRef Name="IdentityUser_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserLogins_dbo_Users_IdentityUser_Id">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.UserLogin" Role="UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="IdentityUser_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_UserRoles_dbo_Users_IdentityUser_Id">
+    <End Type="blueoceanModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="blueoceanModel.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="IdentityUser_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

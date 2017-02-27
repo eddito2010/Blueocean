@@ -1,0 +1,5 @@
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Interfaces\bin\Debug\Interfaces.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Interfaces\obj\Debug\Interfaces.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Interfaces\obj\Debug\Interfaces.pdb
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache

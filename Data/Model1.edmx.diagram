@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8d0be24fdfbe46619f4456c8c6dafd88" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="blueoceanModel.Biller" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Cart" Width="1.5" PointX="21.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Category" Width="1.5" PointX="14.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.City" Width="1.5" PointX="3" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Color" Width="1.5" PointX="18.75" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Comment" Width="1.5" PointX="18.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.EmailList" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Favorite" Width="1.5" PointX="18.75" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.InvoiceDetail" Width="1.5" PointX="15.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Invoice" Width="1.5" PointX="13.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Laar" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Mark" Width="1.5" PointX="14.25" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Message" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.OfficesCourier" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.PaymentPayclub" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Product" Width="1.5" PointX="16.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.ProductsDetail" Width="1.5" PointX="18.75" PointY="36.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.ProductsImage" Width="1.5" PointX="18.75" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Provider" Width="1.5" PointX="8.25" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.PurchaseOrder" Width="1.5" PointX="24" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.PurchaseTracking" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.PurchaseTrackingDetail" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Role" Width="1.5" PointX="16.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Score" Width="1.5" PointX="20.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Shipping" Width="1.5" PointX="13.5" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Size" Width="1.5" PointX="18.75" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.State" Width="1.5" PointX="0.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.SubCategory" Width="1.5" PointX="16.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.sysdiagram" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.Tramaco" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.UserClaim" Width="1.5" PointX="13.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.UserLogin" Width="1.5" PointX="13.5" PointY="33.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.UserRole" Width="1.5" PointX="18.5" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="blueoceanModel.User" Width="1.5" PointX="11.25" PointY="23.875" IsExpanded="true" />
+        <AssociationConnector Association="blueoceanModel.FK_Billers_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Billers_States" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Products_Billers" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Cart_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Cart_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_PurchaseOrders_Cart" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_SubCategories_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Cities_States" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Providers_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Users_Cities" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Colors_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Comments_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Comments_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Favorites_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_InvoiceDetails_Invoices" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Invoices_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Products_Marks" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Products_Providers" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Products_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_ProductsDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_ProductsImages_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Scores_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Sizes_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Providers_States" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_PurchaseOrders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_dbo_UserRoles_dbo_Roles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Scores_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Shippings_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_Users_States" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_dbo_UserClaims_dbo_Users_IdentityUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_dbo_UserLogins_dbo_Users_IdentityUser_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="blueoceanModel.FK_dbo_UserRoles_dbo_Users_IdentityUser_Id" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="blueoceanModel.ProviderConfiguration" Width="1.5" PointX="10.5" PointY="34.375" />
+        <AssociationConnector Association="blueoceanModel.FK_ProviderConfigurations_Providers" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

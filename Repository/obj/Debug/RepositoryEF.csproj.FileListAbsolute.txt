@@ -1,0 +1,16 @@
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\bin\Debug\Repository.dll.config
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\bin\Debug\Repository.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\bin\Debug\Repository.pdb
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\bin\Debug\EntityFramework.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\bin\Debug\EntityFramework.xml
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\obj\Debug\Repository.dll
+C:\Users\CASA\documents\visual studio 2015\Projects\Blueocean\Repository\obj\Debug\Repository.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Blueocean\Repository\bin\Debug\Data.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Blueocean\Repository\bin\Debug\Interfaces.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Blueocean\Repository\bin\Debug\Entities.dll
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Blueocean\Repository\bin\Debug\Data.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Blueocean\Repository\bin\Debug\Interfaces.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Blueocean\Repository\bin\Debug\Entities.pdb
+C:\Users\CASA\Documents\Visual Studio 2015\Projects\Blueocean\Repository\obj\Debug\RepositoryEF.csprojResolveAssemblyReference.cache
